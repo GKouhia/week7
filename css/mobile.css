@@ -1,0 +1,76 @@
+html{
+	/* background-color: yellow; */
+    margin: 0;
+}
+body {
+	line-height: 1.5em;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size:16px;
+	background: #f5f6d4;
+	width:100%; 
+	margin: 0 auto;
+    padding: 0;
+	color:#6C6E3C; /*  ALL BASE TEXT COLOR  */
+}
+/* LINK STYLES SECTIONS FOR WEBSITE */
+nav a { 
+	color: #331C12; text-decoration:underline; font-weight:bold; font-size: .9em; padding: 5px 22px; border-radius: 5px; } /* unvisited links */ 
+nav a: visited { color: #331C12; } /* visited links */
+/* nav a: hover { color: #A7C520; } /* assume no user hover on mobiles */
+nav a: active { color: #ff3300; } /* currently active link */
+/* all body links */
+#mainContent a { text-decoration: underline; margin: 0 padding: .5em 1em 1em 20em;}
+#mainContent a:link { color: #2c2e21; }
+#mainContent a:visited { color:#2c2e21; }
+/* #mainContent a:hover { color:#A7C520; } */
+#mainContent a:active { color:#ff3300; }
+/*override the padding for the links in the aside elements */
+#mainContent aside a{ padding:0;}
+#mainContent img{
+  max-width: 100%;
+  padding: 5px 0 0 5px;
+}
+
+header{
+  margin: 0;
+  padding: 1.5em;
+  background: #85A818 url(../images/interfaceImages/banner-background.png) no-repeat -100px; center;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;  
+border-bottom: 3px solid #2c2e21;
+}
+header h1{
+  margin: 0;
+  text-align: left;
+  font-size: 2em;
+  padding: 30px 0ps 30px 0px;
+  width: 100px;
+  color: #a7c520;
+}
+
+nav{
+  /*width: 100%; } */
+    text-align: center;
+    margin: 0;
+    background: #85AB18;
+}
+nav ul{
+    width: 100%;
+    display:inline-block;
+    overflow: hidden;
+	list-style:none;
+	text-align:left;
+	padding:0;	
+}
+nav ul li{	
+	font-size: 1.3em;
+	text-decoration:none;
+}
+nav ul li:active{
+  background-color: #00FFFF;}  /*-- #662200;} --*/
+}
+nav h2{
+	display:none;	
+}

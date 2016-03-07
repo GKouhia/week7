@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Gallery</title>
+<!--make sure we have cross-device scaling of content made to be standard, so as not to get shrunken text on mobile. -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--think of Media Queries as IF STATEMENTS, for size ranges and breakpoints -->
+  <link href="css/mobile.css" type="text/css" rel="stylesheet"
+media="screen and (min-width:1px) and (max-width:500px)" /> <!--rel stands for relationship. This complete statement is a conditional statement. When it's currently true, then use mobile.css-->
+
+<link href="css/tablet.css" type="text/css" rel="stylesheet" 
+media="screen and (min-width:501px) and (max-width:900px)" />
+
+<link href="css/large.css" type="text/css" rel="stylesheet" 
+media="screen and (min-width:901px) and (max-width:2048px)" />
+
+<link href="css/print.css" type="text/css" rel="stylesheet" media="print" /> <!-- note this can be used to version the print version of the file, so we can remove background graphics that would otherwise eat alot of ink on your printer. -->
+      
+<!-- <script src="javascript/objects.js" type="text/javascript"> </script> -->
+
+
+ 
+
+<style>
+  /*-- creating media queries in CSS... 
+      typically, best practice due to speed (the server just has 1 file to download.)
+  */
+/* To comment out multiple lines: highlight several lines of code, then hit COMMAND-OPTION-FORWARD SLASH*/
+  
+ /* @media (max-width:600px) {
+    body{
+      width: 50%;
+      color: red;
+      background-color: yellow;
+    }
+  }
+  
+  @media (min-width:601px) and (max-width:900px) {
+    body{
+      width: 100%;
+      color: blue;
+      background-color: red;
+    }
+  }*/
+  
+</style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"> </script>
+  <!--This is the Green Sock animation platform. See greensock.com 
+  "Ultra high-performance, professional-grade animation for the modern web" -->
+  
+</head>
+
+  <body> 
+
+  <script>
+    $("document").ready( function(){
+      //create event bindings on ALL tab panel list item (li) buttons
+      $(".tab-panels .tabs li").on("click", function(){
+        //find the active class for the unordered list item and REMOVE it
+        $(".tab-panels .tabs li.active").removeClass("active");
+        //add the "active" class to the li element that the user has clicked
+        $(this).addClass("active");
+        
+        //find out which panel to show by using the current elements rel(ationship) attribute
+        //assign the rel of the li to the variable for testing later
+        var panelToShow = $(this).attr("rel");
+        
+        //hide the current panel
+        $(".tab-panels .panel.active").slideUp(300, function(){
+          $(this).removeClass("active");
+          //show new panel
+          $("#"+panelToShow).slideDown(300, function(){
+            $(this).addClass("active");
+            });
+          });
+        
+        
+        });//end of event attach
+      
+      
+      });
+  
+</script>
+	
+<header>
+	<h1>Gallery</h1> 
+	</header>
+	<nav id="navigation" role="navigation">
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="sign-up.html">Sign Up</a></li>
+			<li><a href="gallery_homework.html">Gallery</a></li>
+			<li><a href="#">About Us</a></li>
+			<li><a href="#">Contact Us</a></li>
+		</ul>
+	</nav>
+<div id="mainContent">
+	<h1>Gallery</h1>
+	<h2>Three Mediums</h2>
+	<div class="tab-panels">
+		<ul class="tabs">
+          <!--the li elements below are the nav tabs, which turn light gray when clicked-->
+			<li rel="drawing" class="active">kids drawing</li>
+			<li rel="water-color">pretty water color</li>
+			<li rel="oil">masters oil</li>
+		</ul>	
+		<div id="drawing" class="panel active">
+			<img src="images/drawing/thumbs/artwork_1.jpg" alt="2 robots"/>
+			<img src="images/drawing/thumbs/artwork_2.jpg" alt="pix"/>
+			<img src="images/drawing/thumbs/artwork_3.jpg" alt="pix"/>
+			<img src="images/drawing/thumbs/artwork_4.jpg" alt="pix"/>
+			<img src="images/drawing/thumbs/artwork_5.jpg" alt="pix"/>
+			<img src="images/drawing/thumbs/artwork_6.jpg" alt="pix"/>
+			<img src="images/drawing/thumbs/artwork_7.jpg" alt="pix"/>
+			<img src="images/drawing/thumbs/artwork_8.jpg" alt="pix"/>
+			<img src="images/drawing/thumbs/artwork_9.jpg" alt="pix"/>
+			<img src="images/drawing/thumbs/artwork_10.jpg" alt="pix"/>
+		</div>
+			<div id="water-color" class="panel">
+			<img src="images/watercolor/thumbs/artwork_1.jpg" alt="pix"/>
+			<img src="images/watercolor/thumbs/artwork_2.jpg" alt="pix"/>
+			<img src="images/watercolor/thumbs/artwork_3.jpg" alt="pix"/>
+			<img src="images/watercolor/thumbs/artwork_4.jpg" alt="pix"/>
+			<img src="images/watercolor/thumbs/artwork_5.jpg" alt="pix"/>
+			<img src="images/watercolor/thumbs/artwork_6.jpg" alt="pix"/>
+			<img src="images/watercolor/thumbs/artwork_7.jpg" alt="pix"/>
+			<img src="images/watercolor/thumbs/artwork_8.jpg" alt="pix"/>
+			<img src="images/watercolor/thumbs/artwork_9.jpg" alt="pix"/>
+			<img src="images/watercolor/thumbs/artwork_10.jpg" alt="pix"/>
+		</div>
+		<div id="oil" class="panel">
+			<img src="images/oil/thumbs/artwork_1.jpg" alt="pix"/>
+			<img src="images/oil/thumbs/artwork_2.jpg" alt="pix"/>
+			<img src="images/oil/thumbs/artwork_3.jpg" alt="pix"/>
+			<img src="images/oil/thumbs/artwork_4.jpg" alt="pix"/>
+			<img src="images/oil/thumbs/artwork_5.jpg" alt="pix"/>
+			<img src="images/oil/thumbs/artwork_6.jpg" alt="pix"/>
+			<img src="images/oil/thumbs/artwork_7.jpg" alt="pix"/>
+			<img src="images/oil/thumbs/artwork_8.jpg" alt="pix"/>
+		</div>
+	</div><!--This is the parent div. closing tab-panels -->
+
+</div><!-- closing primaryContent   -->
+
+<footer>
+	<p class="odd">
+		&copy; Copyright by Jason Zeringue. Homework style changes by Glenn Kouhia.
+	</p>
+</footer>
+
+</body>
+</html>
+
+<!-- now we'll test to see that JQuery is active. We'll use an anonymous function, which is good for use only once. 
+<script>
+    $("document").ready( function(){
+    //alert("hello. Please know the Javascript fron the JQUERY LIBRARY WORKS");
+    //$("img:gt(0)").css("border", "3px solid green");
+    $("li").css("border", "3px solid green");
+    $("li a").css("background-color", "red");  
+    $("img:nth-child(2n)").
+    css("border", "5px solid green");
+    $("img").addClass("error");
+    $("img").fadeOut(2000);
+    $("img").fadeIn(5000);
+    $("img").slideUp(1000);
+    
+  });
+  
+</script>-->
